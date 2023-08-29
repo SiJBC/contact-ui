@@ -4,6 +4,8 @@ This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next
 
 First, run the development server:
 
+To run in dev mode:
+
 ```bash
 npm run dev
 # or
@@ -12,23 +14,41 @@ yarn dev
 pnpm dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Recommend running a production build for faster performance 
+    
+```bash
+npm run build
+# or
+yarn build
+# or
+pnpm build
+```
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```bash
+npm run start
+# or
+yarn start
+# or
+pnpm start
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.    
 
-## Learn More
+About the project:
 
-To learn more about Next.js, take a look at the following resources:
+Client side development with Next.js, React, Typescript, TailwindCSS, and Shad CN.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Data fetching is done with the fetch api in a React Server Component at the root of the application. By taking advantage of the caching on the server the data can be fetched once and then used on the client side. This is a great way to reduce the amount of data fetching on the client side and improve performance. This helps to alleviate the finnicky server which fails to respond intermittently and has a delay to requests. 
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+![image](/Architecture.png)
 
-## Deploy on Vercel
+The client components are used as the tree leaves in the component tree. This is a great way to take advantage of the caching on the server and the performance of the client side rendering.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+Shad CN is the UI library that I chose to use. Shad CN works with radix primitives and uses TailwindCSS under the hood. It is a great library for building UIs quickly and easily. It is also very customizable and has great documentation components are installed with the command line. The only down side is that there is boiler plate code generated when installing components.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+The trade off for tailwind css is that the long strings in the class names can be difficult for code reviews, de bugging and without proper management lead to repeated code. 
+
+tailwind is however an excellent option for quickly developing a UI, is very customizable, well documented and the entire team is using the same names for css properties.
+
+
+
